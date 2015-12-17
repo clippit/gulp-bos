@@ -1,0 +1,28 @@
+{
+  "name": "gulp-bos",
+  "version": "0.0.1",
+  "description": "gulp plugin to upload file to Baidu BCE BOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clippit/gulp-bos.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "baidu"
+  ],
+  "author": "Letian Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clippit/gulp-bos/issues"
+  },
+  "homepage": "https://github.com/clippit/gulp-bos#readme",
+  "dependencies": {
+    "baidubce-sdk": "0.0.17",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.0"
+  }
+}
