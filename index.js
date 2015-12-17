@@ -30,9 +30,15 @@ module.exports = function (options) {
         }
 
         var key = path.join(options.prefix, file.relative);
-        client.putObjectFromString(options.bucket, key, file.contents.toString());
 
-        return callback(null, file);
+        client.putObjectFromString(options.bucket, key, file.contents.toString())
+            .then(function () {
+                gutil.log(gutil.colors.cyan(key), 'uploaded');
+                callback(null, file);
+            }).catch(function (error) {
+                callback(new gutil.PluginError(PLUGIN_NAME, error), file);
+            });
+
     }
 
 
