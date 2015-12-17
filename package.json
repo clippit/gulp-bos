@@ -1,6 +1,6 @@
 {
   "name": "gulp-bos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "gulp plugin to upload file to Baidu BCE BOS",
   "main": "index.js",
   "scripts": {
