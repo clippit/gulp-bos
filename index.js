@@ -3,6 +3,7 @@
 var path = require('path');
 var through = require('through2');
 var gutil = require('gulp-util');
+var mime = require('mime-types')
 var bce = require('baidubce-sdk');
 
 const PLUGIN_NAME = 'gulp-bos';
@@ -30,8 +31,11 @@ module.exports = function (options) {
         }
 
         var key = path.join(options.prefix, file.relative);
+        var header = {
+            'Content-Type': mime.lookup(file.path) || 'application/octet-stream'
+        };
 
-        client.putObjectFromString(options.bucket, key, file.contents.toString())
+        client.putObjectFromString(options.bucket, key, file.contents.toString(), header)
             .then(function () {
                 gutil.log(gutil.colors.cyan(key), 'uploaded');
                 callback(null, file);
