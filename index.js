@@ -35,7 +35,7 @@ module.exports = function (options) {
             'Content-Type': mime.lookup(file.path) || 'application/octet-stream'
         };
 
-        client.putObjectFromString(options.bucket, key, file.contents.toString(), header)
+        client.putObjectFromString(options.bucket, key, new Buffer(file.contents), header)
             .then(function () {
                 gutil.log(gutil.colors.cyan(key), 'uploaded');
                 callback(null, file);
