@@ -1,6 +1,6 @@
 {
   "name": "gulp-bos",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "gulp plugin to upload file to Baidu BCE BOS",
   "main": "index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/clippit/gulp-bos#readme",
   "dependencies": {
-    "baidubce-sdk": "0.0.17",
+    "baidubce-sdk": "^0.0.23",
     "gulp-util": "^3.0.7",
-    "mime-types": "^2.1.8",
-    "through2": "^2.0.0"
+    "mime-types": "^2.1.11",
+    "through2": "^2.0.1"
   }
 }
